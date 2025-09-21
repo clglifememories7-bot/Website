@@ -29,7 +29,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center relative z-10 pt-20">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-            Your Dream Home Awaits
+            Creating Heavens on Earth
           </h2>
           <p className="text-xl sm:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
             Ayyavu Promoters - Building trust, creating homes, and shaping communities for over a decade
@@ -52,21 +52,21 @@ const Hero = () => {
             <div className="flex items-center justify-center space-x-3 hover:scale-110 transition-all duration-300 cursor-pointer hover:bg-white/10 rounded-lg p-4 hover:shadow-lg">
               <Home className="h-8 w-8 text-red-400" />
               <div>
-                <div className="text-2xl font-bold">500+</div>
+                <div className="text-2xl font-bold">100+</div>
                 <div className="text-gray-300">Homes Built</div>
               </div>
             </div>
             <div className="flex items-center justify-center space-x-3 hover:scale-110 transition-all duration-300 cursor-pointer hover:bg-white/10 rounded-lg p-4 hover:shadow-lg">
               <Users className="h-8 w-8 text-red-400" />
               <div>
-                <div className="text-2xl font-bold">1000+</div>
+                <div className="text-2xl font-bold">500+</div>
                 <div className="text-gray-300">Happy Families</div>
               </div>
             </div>
             <div className="flex items-center justify-center space-x-3 hover:scale-110 transition-all duration-300 cursor-pointer hover:bg-white/10 rounded-lg p-4 hover:shadow-lg">
               <Award className="h-8 w-8 text-red-400" />
               <div>
-                <div className="text-2xl font-bold">15+</div>
+                <div className="text-2xl font-bold">20+</div>
                 <div className="text-gray-300">Years Experience</div>
               </div>
             </div>
