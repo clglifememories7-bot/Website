@@ -33,7 +33,7 @@ const About = () => {
               Why Choose Ayyavu Promoters?
             </h2>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              With over 15 years of experience in the real estate industry, Ayyavu Promoters has 
+              With over 20+ years of experience in the real estate industry, Ayyavu Promoters has 
               established itself as a trusted name in property development. We are committed to 
               delivering exceptional quality homes and commercial spaces that exceed expectations.
             </p>
@@ -48,17 +48,17 @@ const About = () => {
           </div>
           <div className="bg-gradient-to-br from-red-950/80 to-gray-900/80 p-8 rounded-2xl border border-red-600/30 backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:border-red-400 transition-all duration-300 cursor-pointer">
             <div className="text-center">
-              <div className="text-4xl font-bold text-red-400 mb-2">15+</div>
+              <div className="text-4xl font-bold text-red-400 mb-2">20+</div>
               <div className="text-yellow-300 mb-6 font-medium">Years of Excellence</div>
               
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-lg hover:bg-white/10">
-                  <div className="text-2xl font-bold text-yellow-300">500+</div>
+                  <div className="text-2xl font-bold text-yellow-300">100+</div>
                   <div className="text-sm text-gray-300">Projects Completed</div>
                 </div>
                 <div className="text-center hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-lg hover:bg-white/10">
-                  <div className="text-2xl font-bold text-yellow-300">1000+</div>
-                <div className="text-2xl font-bold bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-700 bg-clip-text text-transparent">1000+</div>
+                  <div className="text-2xl font-bold text-yellow-300">100+</div>
+                <div className="text-2xl font-bold bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-700 bg-clip-text text-transparent">500+</div>
                   <div className="text-sm text-gray-300">Happy Customers</div>
                 </div>
                 <div className="text-center hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-lg hover:bg-white/10">
