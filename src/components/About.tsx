@@ -57,7 +57,7 @@ const About = () => {
                   <div className="text-sm text-gray-300">Projects Completed</div>
                 </div>
                 <div className="text-center hover:scale-110 transition-all duration-300 cursor-pointer p-2 rounded-lg hover:bg-white/10">
-                  <div className="text-2xl font-bold text-yellow-300">100+</div>
+                  <div className="text-2xl font-bold text-yellow-300">500+</div>
                 <div className="text-2xl font-bold bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-700 bg-clip-text text-transparent">500+</div>
                   <div className="text-sm text-gray-300">Happy Customers</div>
                 </div>
