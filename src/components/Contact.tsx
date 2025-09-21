@@ -33,8 +33,8 @@ const Contact = () => {
                 <Phone className="h-6 w-6 text-red-400 flex-shrink-0 mt-1" />
                 <div>
                   <div className="font-medium">Phone</div>
-                  <div className="text-gray-300">+91 98765 43210</div>
-                  <div className="text-gray-300">+91 87654 32109</div>
+                  <div className="text-gray-300"><a href="tel:+91 93604 93616">+91 93604 93616</a></div>
+                  <div className="text-gray-300"><a href="tel:+91 93457 70330">+91 93457 70330</a></div>
                 </div>
               </div>
               
@@ -42,7 +42,7 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-red-400 flex-shrink-0 mt-1" />
                 <div>
                   <div className="font-medium">Email</div>
-                  <div className="text-gray-300">info@ayyavupromoters.com</div>
+                  <div className="text-gray-300"><a href="mailto:ayyavu.ayyavupromoters@gmail.com">ayyavu.ayyavupromoters@gmail.com</a></div>
                   <div className="text-gray-300">sales@ayyavupromoters.com</div>
                 </div>
               </div>
