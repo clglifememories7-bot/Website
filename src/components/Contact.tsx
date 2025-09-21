@@ -1,7 +1,22 @@
 import React from 'react';
+import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const isFormValid = formData.name && formData.email && formData.phone && formData.message;
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section id="contact" className="py-20 text-white relative">
       <div 
@@ -72,35 +87,53 @@ const Contact = () => {
           
           <div>
             <h3 className="text-2xl font-semibold mb-8">Send Us a Message</h3>
-            <form className="space-y-6 bg-gradient-to-br from-red-950/30 to-gray-900/30 p-6 rounded-xl border border-red-600/20 backdrop-blur-sm hover:scale-105 hover:shadow-2xl hover:border-red-400 transition-all duration-300">
+            <form className="space-y-6 bg-gradient-to-br from-white/5 via-white/10 to-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-xl hover:backdrop-blur-2xl hover:bg-gradient-to-br hover:from-white/10 hover:via-white/15 hover:to-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl hover:shadow-3xl">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   placeholder="Your Name"
-                  className="w-full px-4 py-3 bg-gray-900/80 border border-red-600/30 rounded-lg focus:outline-none focus:border-red-400 hover:border-red-400 transition-all duration-300 text-white placeholder-gray-400 hover:scale-105"
+                  className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl focus:outline-none focus:border-white/40 focus:bg-white/10 hover:border-white/30 hover:bg-white/8 transition-all duration-300 text-white placeholder-gray-300 backdrop-blur-md"
                 />
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
                   placeholder="Your Email"
-                  className="w-full px-4 py-3 bg-gray-900/80 border border-red-600/30 rounded-lg focus:outline-none focus:border-red-400 hover:border-red-400 transition-all duration-300 text-white placeholder-gray-400 hover:scale-105"
+                  className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl focus:outline-none focus:border-white/40 focus:bg-white/10 hover:border-white/30 hover:bg-white/8 transition-all duration-300 text-white placeholder-gray-300 backdrop-blur-md"
                 />
               </div>
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
                 placeholder="Your Phone"
-                className="w-full px-4 py-3 bg-gray-900/80 border border-red-600/30 rounded-lg focus:outline-none focus:border-red-400 hover:border-red-400 transition-all duration-300 text-white placeholder-gray-400 hover:scale-105"
+                className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl focus:outline-none focus:border-white/40 focus:bg-white/10 hover:border-white/30 hover:bg-white/8 transition-all duration-300 text-white placeholder-gray-300 backdrop-blur-md"
               />
               <textarea
                 rows={5}
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 placeholder="Your Message"
-                className="w-full px-4 py-3 bg-gray-900/80 border border-red-600/30 rounded-lg focus:outline-none focus:border-red-400 hover:border-red-400 transition-all duration-300 resize-none text-white placeholder-gray-400 hover:scale-105"
+                className="w-full px-6 py-4 bg-white/5 border border-white/20 rounded-2xl focus:outline-none focus:border-white/40 focus:bg-white/10 hover:border-white/30 hover:bg-white/8 transition-all duration-300 resize-none text-white placeholder-gray-300 backdrop-blur-md"
               ></textarea>
-              <button
+              <div className="relative group">
+                <button
                 type="submit"
-                className="w-full bg-red-600 hover:bg-transparent hover:border-2 hover:border-red-400 hover:text-red-400 text-white py-3 px-6 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                Send Message
-              </button>
+                  className={`w-full py-4 px-6 rounded-2xl font-semibold transition-all duration-500 backdrop-blur-md ${
+                    isFormValid 
+                      ? 'bg-gradient-to-r from-red-600/80 to-red-500/80 hover:from-red-500 hover:to-red-400 text-white shadow-lg hover:shadow-xl border border-red-400/30 hover:border-red-300' 
+                      : 'bg-white/5 hover:bg-gradient-to-r hover:from-red-600/60 hover:to-red-500/60 text-white/60 hover:text-white border border-white/10 hover:border-red-400/50'
+                  } hover:scale-105`}
+                >
+                  Send Message
+                </button>
+              </div>
             </form>
           </div>
         </div>
