@@ -12,7 +12,7 @@ export type PropertyListing = {
   price: string
   area: string
   location: string
-  property_type: 'land' | 'building'
+  property_type: 'residential' | 'commercial'
   contact_name: string
   contact_phone: string
   contact_email: string

@@ -1,5 +1,6 @@
 import React from 'react';
-import { ArrowLeft, MapPin, Home, Ruler, Calendar } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowLeft, MapPin, Home, Ruler, Calendar, Building } from 'lucide-react';
 
 interface Property {
   id: number;
@@ -7,7 +8,7 @@ interface Property {
   location: string;
   price: string;
   area: string;
-  type: 'land' | 'building';
+  type: 'residential' | 'commercial';
   image: string;
   status: 'available' | 'sold' | 'upcoming';
   description: string;
@@ -15,6 +16,8 @@ interface Property {
 }
 
 const Properties = () => {
+  const [activeTab, setActiveTab] = useState<'residential' | 'commercial'>('residential');
+
   // Editable properties data - you can modify these details
   const properties: Property[] = [
     {
@@ -23,7 +26,7 @@ const Properties = () => {
       location: "Jubilee Hills, Hyderabad",
       price: "₹2.5 Cr",
       area: "300 sq yards",
-      type: "land",
+      type: "residential",
       image: "https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=800",
       status: "available",
       description: "Prime residential plot in the heart of Jubilee Hills with excellent connectivity.",
@@ -35,7 +38,7 @@ const Properties = () => {
       location: "Banjara Hills, Hyderabad",
       price: "₹4.2 Cr",
       area: "4500 sq ft",
-      type: "building",
+      type: "residential",
       image: "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=800",
       status: "available",
       description: "Stunning 4BHK villa with modern amenities and premium finishes.",
@@ -47,7 +50,7 @@ const Properties = () => {
       location: "HITEC City, Hyderabad",
       price: "₹8.5 Cr",
       area: "500 sq yards",
-      type: "land",
+      type: "commercial",
       image: "https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=800",
       status: "available",
       description: "Strategic commercial plot in IT corridor with high appreciation potential.",
@@ -59,7 +62,7 @@ const Properties = () => {
       location: "Kondapur, Hyderabad",
       price: "₹1.8 Cr",
       area: "2200 sq ft",
-      type: "building",
+      type: "residential",
       image: "https://images.pexels.com/photos/1396118/pexels-photo-1396118.jpeg?auto=compress&cs=tinysrgb&w=800",
       status: "upcoming",
       description: "Contemporary 3BHK apartment with world-class amenities.",
@@ -67,29 +70,31 @@ const Properties = () => {
     },
     {
       id: 5,
-      title: "Farmhouse Plot",
-      location: "Shamshabad, Hyderabad",
-      price: "₹1.2 Cr",
-      area: "1000 sq yards",
-      type: "land",
+      title: "Office Space",
+      location: "Gachibowli, Hyderabad",
+      price: "₹3.2 Cr",
+      area: "2500 sq ft",
+      type: "commercial",
       image: "https://images.pexels.com/photos/1396119/pexels-photo-1396119.jpeg?auto=compress&cs=tinysrgb&w=800",
       status: "available",
-      description: "Spacious farmhouse plot perfect for weekend getaway or investment.",
-      amenities: ["Peaceful Location", "Good Road Access", "Electricity Available", "Water Connection"]
+      description: "Premium office space in IT corridor with modern facilities.",
+      amenities: ["IT Hub Location", "Parking", "24/7 Security", "High Speed Internet"]
     },
     {
       id: 6,
-      title: "Duplex House",
-      location: "Gachibowli, Hyderabad",
-      price: "₹3.5 Cr",
-      area: "3800 sq ft",
-      type: "building",
+      title: "Retail Shop",
+      location: "Banjara Hills, Hyderabad",
+      price: "₹1.8 Cr",
+      area: "800 sq ft",
+      type: "commercial",
       image: "https://images.pexels.com/photos/1396117/pexels-photo-1396117.jpeg?auto=compress&cs=tinysrgb&w=800",
-      status: "sold",
-      description: "Elegant duplex house with premium specifications and modern design.",
-      amenities: ["Terrace Garden", "Home Theater", "Study Room", "Servant Quarter", "Car Parking"]
+      status: "available",
+      description: "Prime retail space in busy commercial area with high footfall.",
+      amenities: ["High Footfall", "Parking Available", "Good Visibility", "Metro Nearby"]
     }
   ];
+
+  const filteredProperties = properties.filter(property => property.type === activeTab);
 
   const getStatusColor = (status: string) => {
     switch (status) {
@@ -120,7 +125,37 @@ const Properties = () => {
             <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-700 bg-clip-text text-transparent">
               Available Properties
             </h1>
-            <div className="w-24"></div> {/* Spacer for centering */}
+            <div className="w-24"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Property Type Tabs */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <div className="flex justify-center">
+          <div className="bg-black/20 backdrop-blur-md rounded-full border border-white/10 p-2">
+            <div className="flex space-x-2">
+              <button
+                onClick={() => setActiveTab('residential')}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeTab === 'residential'
+                    ? 'bg-red-600 text-white shadow-lg'
+                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Residential
+              </button>
+              <button
+                onClick={() => setActiveTab('commercial')}
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                  activeTab === 'commercial'
+                    ? 'bg-red-600 text-white shadow-lg'
+                    : 'text-white/70 hover:text-white hover:bg-white/10'
+                }`}
+              >
+                Commercial
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -128,7 +163,7 @@ const Properties = () => {
       {/* Properties Grid */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {properties.map((property) => (
+          {filteredProperties.map((property) => (
             <div 
               key={property.id}
               className="bg-gradient-to-br from-gray-900/80 to-red-950/30 rounded-2xl overflow-hidden border border-red-600/30 hover:border-red-400 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer backdrop-blur-sm"
@@ -147,8 +182,8 @@ const Properties = () => {
                 </div>
                 <div className="absolute top-4 left-4">
                   <span className="bg-black/60 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center">
-                    {property.type === 'land' ? <Ruler className="h-3 w-3 mr-1" /> : <Home className="h-3 w-3 mr-1" />}
-                    {property.type === 'land' ? 'Land' : 'Building'}
+                    {property.type === 'residential' ? <Home className="h-3 w-3 mr-1" /> : <Building className="h-3 w-3 mr-1" />}
+                    {property.type === 'residential' ? 'Residential' : 'Commercial'}
                   </span>
                 </div>
               </div>

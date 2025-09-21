@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Upload, X, MapPin, Home, Ruler, Phone, Mail, User, DollarSign } from 'lucide-react';
+import { ArrowLeft, Upload, X, MapPin, Home, Ruler, Phone, Mail, User, DollarSign, Building } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const SellProperty = () => {
@@ -15,7 +15,7 @@ const SellProperty = () => {
     price: '',
     area: '',
     location: '',
-    property_type: 'land' as 'land' | 'building',
+    property_type: 'residential' as 'residential' | 'commercial',
     contact_name: '',
     contact_phone: '',
     contact_email: ''
@@ -137,7 +137,7 @@ const SellProperty = () => {
         price: '',
         area: '',
         location: '',
-        property_type: 'land',
+        property_type: 'residential',
         contact_name: '',
         contact_phone: '',
         contact_email: ''
@@ -207,27 +207,27 @@ const SellProperty = () => {
               <div className="flex space-x-4">
                 <button
                   type="button"
-                  onClick={() => setFormData(prev => ({ ...prev, property_type: 'land' }))}
+                  onClick={() => setFormData(prev => ({ ...prev, property_type: 'residential' }))}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-lg border transition-all ${
-                    formData.property_type === 'land'
-                      ? 'bg-red-600 border-red-600 text-white'
-                      : 'border-gray-600 text-gray-300 hover:border-red-400'
-                  }`}
-                >
-                  <Ruler className="h-4 w-4" />
-                  <span>Land</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setFormData(prev => ({ ...prev, property_type: 'building' }))}
-                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg border transition-all ${
-                    formData.property_type === 'building'
+                    formData.property_type === 'residential'
                       ? 'bg-red-600 border-red-600 text-white'
                       : 'border-gray-600 text-gray-300 hover:border-red-400'
                   }`}
                 >
                   <Home className="h-4 w-4" />
-                  <span>Building</span>
+                  <span>Residential</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setFormData(prev => ({ ...prev, property_type: 'commercial' }))}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg border transition-all ${
+                    formData.property_type === 'commercial'
+                      ? 'bg-red-600 border-red-600 text-white'
+                      : 'border-gray-600 text-gray-300 hover:border-red-400'
+                  }`}
+                >
+                  <Building className="h-4 w-4" />
+                  <span>Commercial</span>
                 </button>
               </div>
             </div>
