@@ -43,7 +43,7 @@ const Contact = () => {
                 <div>
                   <div className="font-medium">Email</div>
                   <div className="text-gray-300"><a href="mailto:ayyavu.ayyavupromoters@gmail.com">ayyavu.ayyavupromoters@gmail.com</a></div>
-                  <div className="text-gray-300">sales@ayyavupromoters.com</div>
+                
                 </div>
               </div>
               
@@ -52,9 +52,9 @@ const Contact = () => {
                 <div>
                   <div className="font-medium">Address</div>
                   <div className="text-gray-300">
-                    123 Real Estate Plaza,<br />
-                    Business District,<br />
-                    City - 500001
+                   No-17, Vidhya Colony 5th cross, Thadagam rd<br />
+                    TVS Nagar,<br />
+                    Coimbatore - 641025
                   </div>
                 </div>
               </div>
