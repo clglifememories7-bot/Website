@@ -15,7 +15,7 @@ const Header = () => {
               <h1 className="text-base font-bold bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-700 bg-clip-text text-transparent hidden sm:block drop-shadow-lg">Ayyavu Promoters</h1>
             </div>
           </div>
-          <nav className="flex space-x-6">
+          <nav className="flex space-x-3">
             <a href="#home" className="nav-link text-white/90 text-sm font-medium relative overflow-hidden">
               <span className="relative z-10">Home</span>
             </a>

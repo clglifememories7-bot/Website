@@ -5,7 +5,7 @@
 /* Liquid container animation for navigation links */
 .nav-link {
   position: relative;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -17,7 +17,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.3));
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
   transform: scale(0);
   transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -26,25 +27,28 @@
 
 .nav-link:hover::before {
   transform: scale(1);
-  animation: liquidBubble 0.6s ease-out;
+  animation: transparentBubble 0.6s ease-out;
 }
 
 .nav-link:hover {
-  color: rgba(248, 113, 113, 1);
+  color: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
 }
 
-@keyframes liquidBubble {
+@keyframes transparentBubble {
   0% {
     transform: scale(0);
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
   }
   50% {
     transform: scale(1.1);
     border-radius: 30px;
+    background: rgba(255, 255, 255, 0.15);
   }
   100% {
     transform: scale(1);
     border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
   }
 }
